@@ -19,4 +19,12 @@ public class MyArrayList {
 		list = new char[size];
 	}
 	
+	private boolean isEmpty() {
+		
+		return (howManyElements == 0) ? true : false;
+	}
+	
+	private boolean isFull() {
+		return(size == howManyElements) ? true : false;
+	}
 }

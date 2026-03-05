@@ -114,17 +114,27 @@ public class MyArrayList {
 		if(isEmpty()) {
 			throw new Exception("Saraksts ir tukss");
 		}
-		ArrayList<Integer> indexArrayList = new ArrayList<Integer>();
-		for(int i=0;i < howManyElements;i++) {
+		
+		int howManyIndexes = 0;
+		for(int i=0; i< howManyElements;i++) {
 			if(list[i] == element) {
-				indexArrayList.add(i);
+				howManyIndexes++;
 			}
 		}
-		if(indexArrayList.isEmpty()) {
+			
+		int[] indexArray = new int[howManyIndexes];
+		int indexForIndexesArray = 0;
+		for(int i=0;i < howManyElements;i++) {
+			if(list[i] == element) {
+				indexArray[indexForIndexesArray] = i;
+				indexForIndexesArray++;
+			}
+		}
+		if(indexForIndexesArray == 0) {
 			throw new Exception("Mekletais elements " + element + "neatrodas saraksta");
 		}
 		
-		return indexArrayList;
+		return indexArray;
 	}
 	
 	

@@ -48,4 +48,26 @@ public class MyArrayList {
 		list[howManyElements] = element;
 		howManyElements++;
 	}
+	
+	public void add(char element, int index) throws IllegalArgumentException {
+		if(index < 0) {
+			throw new IllegalArgumentException("Nav iespejams pievienot elementu, jo index ir negativs");
+		}
+		if(howManyElements < index) {
+			throw new IllegalArgumentException("Nav iespejams pievienot elementu, jo indekss ir parak liels");
+		}
+		if(index == howManyElements) {
+			add(element);
+			return;
+		}
+		if(isFull()) {
+			resize();
+		}
+		for(int i = howManyElements;i > index; i--) {
+			list[i] = list[i-1];
+		}
+		list[index] = element;
+		howManyElements++;
+		
+	}
 }

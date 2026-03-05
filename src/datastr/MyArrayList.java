@@ -92,4 +92,24 @@ public class MyArrayList {
 		howManyElements--;
 		
 	}
+	
+	public char get(int index) throws Exception {
+		if(isEmpty()) {
+			throw new Exception("Saraksts ir tukss");
+		}
+		if(index < 0) {
+			throw new IllegalArgumentException("Indekss nevar but negativs");
+			
+		}
+		if(index >=howManyElements) {
+			throw new IllegalArgumentException("Nav iespejams iegut elementu, jo indekss ir lielaks vai vienads ar elementu skaitu");
+		}
+		
+		return list[index];
+	}
+	
+	
+	
+	
+	
 }

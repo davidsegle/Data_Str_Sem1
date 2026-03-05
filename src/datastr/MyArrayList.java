@@ -70,4 +70,8 @@ public class MyArrayList {
 		howManyElements++;
 		
 	}
+	
+	public int getHowManyElements() {
+		return howManyElements;
+	}
 }

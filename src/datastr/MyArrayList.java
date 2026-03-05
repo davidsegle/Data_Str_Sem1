@@ -1,5 +1,7 @@
 package datastr;
 
+import java.util.ArrayList;
+
 public class MyArrayList {
 	
 	private char[] list;
@@ -108,6 +110,22 @@ public class MyArrayList {
 		return list[index];
 	}
 	
+	public ArrayList<Integer> search(char element) throws Exception{
+		if(isEmpty()) {
+			throw new Exception("Saraksts ir tukss");
+		}
+		ArrayList<Integer> indexArrayList = new ArrayList<Integer>();
+		for(int i=0;i < howManyElements;i++) {
+			if(list[i] == element) {
+				indexArrayList.add(i);
+			}
+		}
+		if(indexArrayList.isEmpty()) {
+			throw new Exception("Mekletais elements " + element + "neatrodas saraksta");
+		}
+		
+		return indexArrayList;
+	}
 	
 	
 	

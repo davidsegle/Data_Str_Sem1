@@ -74,4 +74,22 @@ public class MyArrayList {
 	public int getHowManyElements() {
 		return howManyElements;
 	}
+	
+	public void remove(int index) throws Exception {
+		if(isEmpty()) {
+			 throw new Exception("Sarkasts ir tukss");
+		}
+		if(index < 0) {
+			 throw new Exception("Indekss nevar but negativs");
+		}
+		if(index >= howManyElements) {
+			 throw new Exception("Indekss nevar but lielaks vai vienads ar elementu skaitu");
+		}
+		for(int i = index; i < howManyElements-1; i++) {
+			list[i] = list[i+1];
+		}
+		list[howManyElements-1] = ' ';
+		howManyElements--;
+		
+	}
 }

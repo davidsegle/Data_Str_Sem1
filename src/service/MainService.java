@@ -47,7 +47,10 @@ public class MainService {
 			allStudents.add(s2);
 			allStudents.add(s3);
 			allStudents.print();
-			
+			System.out.println(allStudents.get(0));	
+			System.out.println(allStudents.search(s3));
+			System.out.println(Arrays.toString(allStudents.getNextElements(s3)));
+			allStudents.sort();
 		}
 		catch (Exception e){
 			System.out.println(e.getMessage());
